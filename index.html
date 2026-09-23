@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Fassadenplaner — Gutes Holz. Gut geplant.</title>
+<style>
+:root{--ink:#25392e;--muted:#6b7168;--green:#284c3d;--line:#dedfd5;--paper:#f4f3ed;--wood:#b99165;--white:#fffefa;--error:#9d392d}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button,summary,input,select{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:focus-visible,summary:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #ad793d;outline-offset:4px}[hidden]{display:none!important}h1,h2,p{margin:0}button,input,select{color:inherit}.shell{max-width:1180px;padding:0 36px;margin:auto}.masthead{height:88px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.wordmark{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:750;letter-spacing:2.1px}.brand-symbol{width:32px;height:34px;display:flex;gap:4px;align-items:center}.brand-symbol i{display:block;width:7px;height:27px;background:var(--green);transform:skewY(-25deg)}.brand-symbol i:nth-child(2){height:34px}.masthead-note{font-size:12px;color:var(--muted)}.intro{padding:42px 0 32px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px}.eyebrow{font-size:10px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase}.intro h1{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:49px;line-height:1.14;letter-spacing:-1.8px;margin:11px 0 12px}.intro p{color:var(--muted);max-width:530px;font-size:14px}.intro-note{font-size:11px;color:var(--muted);border-left:1px solid #cacdbf;padding-left:18px;max-width:190px;margin-bottom:3px;line-height:1.8}.workspace{display:grid;grid-template-columns:minmax(0,1.38fr) minmax(0,1fr);gap:24px;align-items:start;padding-bottom:34px}.form-stack{display:grid;gap:18px;min-width:0}.panel{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:26px}.section-head{display:flex;gap:13px;align-items:center;margin-bottom:23px}.step{font-size:11px;font-weight:650;display:grid;place-items:center;width:31px;height:31px;border:1px solid #d8ddcf;border-radius:50%;color:var(--green);flex:none}.section-head h2{font-size:19px;font-weight:600;letter-spacing:-.35px}.section-head .section-sub{font-size:12px;color:var(--muted);margin-top:2px}.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{margin-bottom:19px;min-width:0}label,.field-label{display:block;font-size:12px;font-weight:600;margin-bottom:8px}.field-label small{font-weight:400;color:var(--muted);margin-left:5px}.input-wrap{position:relative}.input-wrap input{padding-right:37px}.suffix{position:absolute;right:14px;top:13px;color:var(--muted);font-size:13px;pointer-events:none}input[type=number],select{width:100%;min-width:0;height:47px;padding:10px 13px;background:#fffefa;border:1px solid #d8dcd2;border-radius:7px;font-size:14px}select{padding-right:25px}input::placeholder{color:#94998e}input[type=checkbox],input[type=radio],input[type=range]{accent-color:var(--green)}input:disabled{background:#efefe9;color:#9ca295}input[type=range]{width:100%}.len-list{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.btn{min-height:45px;border:1px solid #d8dcd2;border-radius:7px;padding:10px 14px;background:transparent;font-size:13px;font-weight:600;transition:background .15s}.btn:hover{background:#eeefe7}.len-list .btn.primary{border-color:var(--green);background:var(--green);color:#fffefa}.direction-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}.direction-option{position:relative;display:flex;align-items:center;gap:12px;margin:0;padding:13px;border:1px solid #d8dcd2;border-radius:9px;cursor:pointer;font-size:13px;font-weight:500}.direction-option:has(input:checked){border-color:var(--green);background:#eef1e9;box-shadow:inset 0 0 0 1px var(--green)}.direction-option input{position:absolute;right:10px;top:10px;width:14px;height:14px;margin:0}.swatch{height:43px;width:54px;flex:none;border:1px solid #927249;border-radius:3px;background:repeating-linear-gradient(0deg,#b58b5b 0px,#cfae7f 2px,#d9bb90 9px,#957243 10px,#957243 11px)}.swatch.vertical{background:repeating-linear-gradient(90deg,#b58b5b 0px,#cfae7f 2px,#d9bb90 9px,#957243 10px,#957243 11px)}.direction-option span:last-child{padding-right:5px}.fold{border-top:1px solid var(--line)}.fold summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:49px;font-size:12px;font-weight:600}.fold summary::-webkit-details-marker{display:none}.fold summary:after{content:'+';font-size:20px;font-weight:400;color:var(--muted)}.fold[open]>summary:after{content:'−'}.fold-content{padding:4px 0 15px}.check-label{font-weight:400;display:flex;align-items:flex-start;gap:8px}.check-label input{margin-top:4px}.hint,.field-hint{color:var(--muted);font-size:11px;line-height:1.65}.field-hint{margin-top:6px}.hint p+p{margin-top:9px}.add-button{width:100%;display:flex;align-items:center;justify-content:center;gap:9px;background:var(--green);color:white;border-color:var(--green);margin-top:12px}.add-button:hover{background:#193e2c}.plus{font-size:21px;font-weight:400;line-height:1}.walls{display:grid;gap:9px;margin-top:18px}.empty-walls{display:flex;align-items:center;gap:8px;color:#7b8277;font-size:12px}.empty-dot{width:6px;height:6px;border:1px solid #8a9384;border-radius:50%}.wall-item{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#f1f2eb;border-radius:8px;padding:12px}.wall-item .info{font-size:12px}.wall-item .del{background:transparent;border:0;color:#7b4d3e;font-size:11px;padding:8px 0;min-height:40px}.wall-form-msg{color:var(--error);font-size:12px;margin-top:8px}.wall-form-msg:empty{display:none}.settings{padding:0 22px;border:1px solid var(--line);border-radius:12px;background:transparent}.settings>summary{min-height:55px}.settings .row{margin-top:18px}.summary-column{position:sticky;top:22px;min-width:0;border-radius:17px;overflow:hidden;border:1px solid #d7dbcc;background:#e8eadf}.scene{padding:24px 25px 11px;background:#e9ecdf}.scene-header{display:flex;justify-content:space-between;align-items:center}.scene-label{font-size:10px;letter-spacing:1.6px;font-weight:700;text-transform:uppercase}.scene-tag{font-size:10px;color:#65725e;background:#f4f6ec;border-radius:20px;padding:4px 9px}.facade-svg{display:block;width:100%;height:240px;overflow:visible}.scene-footer{font-size:10px;color:#6d7766;display:flex;justify-content:space-between;border-top:1px solid #d2d8c7;padding-top:11px;padding-bottom:7px}.result-panel{background:var(--green);color:#f8f7ec;padding:26px}.result-eyebrow{font-size:10px;letter-spacing:1.7px;text-transform:uppercase;color:#cbd6c5;margin-bottom:9px}.quantity-line{display:flex;align-items:baseline;gap:12px;min-height:85px}.quantity{font-size:78px;font-weight:400;letter-spacing:-5px;line-height:1.05;font-variant-numeric:tabular-nums}.quantity-unit{font:24px Georgia,serif}.stock-label{font-size:13px;color:#cedac9}.result-empty{padding:8px 0 10px}.result-empty .dash{font:62px Georgia,serif;color:#b7c7ad;line-height:1}.result-empty p{font-size:13px;margin-top:12px;color:#dbe3d5;max-width:245px}.reserve-label{font-size:11px;color:#dbe5d3;border-top:1px solid #52715f;padding-top:16px;margin-top:19px;display:flex;align-items:center;gap:7px}.reserve-label:before{content:'✓';color:#d5e6b7}.legal{font-size:10px;line-height:1.7;color:#b9cbb4;margin-top:15px}.joints{font-size:11px;line-height:1.5;padding:10px;margin-top:14px;border:1px solid #69816b;border-radius:7px;color:#f1e1bc}.details-area{padding:0 24px;background:var(--white)}.details-area>.fold{border:0}.details-grid{display:grid;grid-template-columns:1fr auto;gap:9px;font-size:11px;margin:0 0 18px}.details-grid dt{color:var(--muted)}.details-grid dd{margin:0;font-weight:600;text-align:right}.status{display:none;font-size:11px;line-height:1.65;padding:13px 24px;background:var(--white);border-top:1px solid var(--line)}.status.show{display:block}.status.err{color:var(--error);background:#fff3ed}.status.warn{color:#785b24;background:#f8f1dd}.status.info{color:#68735e;background:#f1f3e9}.footer{border-top:1px solid var(--line);padding:20px 0 28px;font-size:10px;color:var(--muted);display:flex;justify-content:space-between;gap:20px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.result-panel:focus{outline:0}.scene-tag:empty{display:none} @media(min-width:1000px){.product-row{grid-template-columns:.8fr 1.2fr}}@media(max-width:850px){.shell{padding:0 22px}.workspace{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:18px}.intro h1{font-size:41px}.panel{padding:20px}.product-row{grid-template-columns:1fr;gap:0}.direction-option{flex-direction:column;align-items:flex-start}.result-panel{padding:22px}.scene{padding:21px 18px 10px}.intro-note{display:none}.facade-svg{height:220px}}@media(max-width:650px){.shell{padding:0 18px}.masthead{height:71px}.masthead-note{font-size:10px}.wordmark{font-size:10px;letter-spacing:1.5px;gap:9px}.brand-symbol{transform:scale(.85);width:27px}.intro{padding:28px 0 25px}.intro h1{font-size:39px;line-height:1.12;max-width:300px;letter-spacing:-1.2px}.intro p{font-size:13px;max-width:300px}.workspace{grid-template-columns:1fr;gap:18px}.summary-column{position:static;grid-row:auto}.panel{padding:22px 19px;border-radius:13px}.direction-option{flex-direction:row;align-items:center;padding:12px 9px;gap:9px}.swatch{width:43px;height:40px}.direction-option input{right:6px;top:6px;width:11px;height:11px}.direction-option span:last-child{font-size:12px}.scene{padding:21px 22px 10px}.facade-svg{height:210px}.intro .eyebrow{font-size:9px}.footer{flex-direction:column;gap:7px}.quantity{font-size:76px}.settings{padding:0 19px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}@media print{body{background:white}.masthead,.intro,.form-stack,.footer{display:none}.workspace{display:block}.summary-column{position:static;max-width:600px;margin:auto}.result-panel{print-color-adjust:exact;-webkit-print-color-adjust:exact}.shell{padding:0}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="masthead"><div class="wordmark"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i></span>FASSADENPLANER</div><span class="masthead-note">Holz. Maß. Material.</span></header>
+  <div class="intro"><div><div class="eyebrow">Ihr Projekt beginnt hier</div><h1>Gutes Holz. Gut geplant.</h1><p>Wählen Sie Ihr Holz und geben Sie die Wandmaße ein.<br>Wir schätzen den Materialbedarf für Ihre Fassade.</p></div><div class="intro-note">In wenigen Schritten<br>von der Idee zur Materialmenge.</div></div>
+  <main class="workspace">
+    <div class="form-stack">
+      <section class="panel" aria-labelledby="materialTitle">
+        <div class="section-head"><span class="step">01</span><div><h2 id="materialTitle">Das passende Holz</h2><p class="section-sub">Material, Länge und Verlegerichtung</p></div></div>
+        <div class="row product-row"><div class="field"><label for="ddCategory">Kategorie</label><select id="ddCategory"></select></div><div class="field"><label for="ddPosition">Produkt</label><select id="ddPosition"></select></div></div>
+        <div class="field"><div class="field-label" id="lengthLabel">Brettlänge <small>je Brett</small></div><div id="lenButtons" class="len-list" role="group" aria-labelledby="lengthLabel"></div></div>
+        <div class="field-label" id="dirLabel">Verlegerichtung</div><div class="direction-list" role="radiogroup" aria-labelledby="dirLabel">
+          <label class="direction-option"><input type="radio" name="direction" value="H" checked/><span class="swatch" aria-hidden="true"></span><span>Horizontal</span></label>
+          <label class="direction-option"><input type="radio" name="direction" value="V"/><span class="swatch vertical" aria-hidden="true"></span><span>Vertikal</span></label>
+        </div>
+      </section>
+      <section class="panel" aria-labelledby="wallsTitle">
+        <div class="section-head"><span class="step">02</span><div><h2 id="wallsTitle">Ihre Wandmaße</h2><p class="section-sub">Jede Wand einzeln hinzufügen</p></div></div>
+        <div class="row"><div class="field"><label for="inpWL">Länge</label><div class="input-wrap"><input id="inpWL" type="number" min="0.01" max="200" step="0.01" placeholder="z. B. 6,00" inputmode="decimal"/><span class="suffix">m</span></div></div><div class="field"><label for="inpWH">Höhe</label><div class="input-wrap"><input id="inpWH" type="number" min="0.01" max="50" step="0.01" placeholder="z. B. 2,70" inputmode="decimal"/><span class="suffix">m</span></div></div></div>
+        <details class="fold"><summary>Giebel hinzufügen <span class="sr-only">optional</span></summary><div class="fold-content"><label class="check-label"><input id="chkG" type="checkbox"/>Diese Wand hat einen Giebel</label><label for="inpGH">Zusätzliche Giebelhöhe (m)</label><input id="inpGH" type="number" min="0.01" max="50" step="0.01" placeholder="z. B. 2,00" disabled/><p class="field-hint">Symmetrisches Dreieck mit der Spitze in der Mitte.</p></div></details>
+        <button type="button" id="btnAddWall" class="btn add-button"><span class="plus" aria-hidden="true">+</span>Wand hinzufügen</button><p id="wallFormMsg" class="wall-form-msg" role="status"></p><div class="walls" id="walls"></div>
+      </section>
+      <details class="fold settings" id="settings"><summary>Reserve & Materialangaben</summary><div class="fold-content"><label for="sldReserve">Materialreserve: <span id="lblReserve">10 %</span></label><input id="sldReserve" type="range" min="0" max="25" step="1" value="10"/><div class="row"><div class="field"><label for="inpNutz">Deck-/Nutzbreite (mm)</label><input id="inpNutz" type="number" min="10" max="500" step="1"/><p id="hintNutz" class="field-hint"></p></div><div class="field"><label for="inpBreite">Brettbreite (mm)</label><input id="inpBreite" type="number" min="10" max="500" step="1"/><p class="field-hint">Für die ungefähre Kubatur.</p></div></div><label class="check-label"><input type="checkbox" id="chkConfirmWidth"/>Deck-/Nutzbreite geprüft und bestätigt</label></div></details>
+    </div>
+    <aside class="summary-column" aria-label="Vorschau und Materialbedarf">
+      <div class="scene"><div class="scene-header"><span class="scene-label">Ihre Fassade</span><span class="scene-tag" id="previewTag">Horizontal</span></div>
+        <svg class="facade-svg" viewBox="0 0 380 240" role="img" aria-labelledby="previewTitle"><title id="previewTitle">Schematische Vorschau der Verlegerichtung</title><defs><pattern id="boardPatternH" width="280" height="14" patternUnits="userSpaceOnUse"><rect width="280" height="14" fill="#c5a275"/><rect width="280" height="1.5" fill="#967046"/><path d="M0 5 Q80 2 160 6 T280 5 M0 10 Q130 12 280 9" stroke="#d8b98d" stroke-width=".8" fill="none"/></pattern><pattern id="boardPatternV" width="14" height="280" patternUnits="userSpaceOnUse"><rect width="14" height="280" fill="#c5a275"/><rect width="1.5" height="280" fill="#967046"/><path d="M5 0 Q2 80 6 160 T5 280 M10 0 Q12 130 9 280" stroke="#d8b98d" stroke-width=".8" fill="none"/></pattern></defs><ellipse cx="190" cy="199" rx="146" ry="9" fill="#738069" opacity=".09"/><path id="facadeSide" fill="#9a754e" d="M320 59L329 53V188L320 194Z"/><path id="facadeTop" fill="#ddbf96" d="M60 59L69 53H329L320 59Z"/><path id="facadeShape" fill="url(#boardPatternH)" stroke="#a08054" stroke-width=".8" d="M60 59H320V194H60Z"/><g stroke="#87927c" stroke-width=".8" fill="none"><path d="M60 207V219M320 207V219M60 214H320M43 59H31M43 194H31M36 59V194"/><path d="M60 214l5-3m-5 3l5 3m255-3l-5-3m5 3l-5 3M36 59l-3 5m3-5l3 5M36 194l-3-5m3 5l3-5"/></g><g fill="#53634b" font-family="system-ui,sans-serif" font-size="11"><text id="previewWidth" x="190" y="233" text-anchor="middle">Länge</text><text id="previewHeight" x="23" y="127" text-anchor="middle" transform="rotate(-90 23 127)">Höhe</text></g></svg>
+        <div class="scene-footer"><span id="previewCaption">Schematische Darstellung</span><span>Nicht maßstabsgetreu</span></div>
+      </div>
+      <div class="result-panel" aria-live="polite" aria-atomic="true"><div class="result-eyebrow">Ihr geschätzter Materialbedarf</div><div id="emptyResult" class="result-empty"><div class="dash">—</div><p>Fügen Sie Ihre erste Wand hinzu.<br>Ihr Materialbedarf erscheint hier.</p></div><div id="heroResult" hidden><p id="outHero" class="sr-only">—</p><div class="quantity-line" aria-hidden="true"><span id="resultValue" class="quantity">—</span><span id="resultUnit" class="quantity-unit">Bretter</span></div><div class="stock-label" id="resultStock">—</div><p id="outReserve" class="reserve-label">—</p><p class="joints" id="outJointsNotice" hidden></p><p class="legal">Unverbindliche Schätzung. Öffnungen, genaue Stoßpositionen und Montagefugen sind nicht berücksichtigt. Die tatsächliche Menge kann abweichen.</p></div></div>
+      <div id="statusBox" class="status" role="status"></div>
+      <div class="details-area"><details class="fold"><summary>Berechnungsdetails & Annahmen</summary><div class="fold-content"><dl class="details-grid"><dt>Verlegerichtung</dt><dd id="outDirection">—</dd><dt>Reihen / Streifen</dt><dd id="outUnits">—</dd><dt>Bretter vor Reserve</dt><dd id="outBaseBoards">—</dd><dt>Zusätzliche Reserve</dt><dd id="outReserveBoards">—</dd><dt>Laufmeter Einkauf</dt><dd id="outLfmBuy">—</dd><dt>m³ Einkauf (ca.)</dt><dd id="outM3">—</dd><dt>Stöße erforderlich</dt><dd id="outJoints">—</dd></dl><div class="hint"><p><strong>Planung:</strong> Zuschnitte werden je Wand nacheinander auf Lagerbretter verteilt, mit 3 mm Sägeschnitt. Restlängen werden nicht zwischen Wänden übertragen.</p><p><strong>Öffnungen:</strong> Fenster und Türen werden ohne genaue Position nicht abgezogen.</p><p><strong>Giebel:</strong> Symmetrisches Dreieck. Randstreifen werden konservativ bemessen; dadurch kann Mehrmaterial entstehen.</p><p><strong>Stöße:</strong> Längen über der Brettlänge werden gleichmäßig geteilt. Keine geprüfte Montage- oder Fugenplanung.</p></div></div></details></div>
+    </aside>
+  </main><footer class="footer"><span>Fassadenplaner · Orientierungswerte für Ihr Holzprojekt</span><span>Die Maße machen den Unterschied.</span></footer>
+</div>
+
+<script>
+const SORTIMENT = {
+  "Schalung": [
+    { title:"Schalung mit Nut + Feder 20 x 95 mm", dicke_mm:20, nutzbreite_mm:95, breite_mm:95, nutzHint:"Nennmaß — tatsächliche Deckbreite bitte prüfen.", laengen:[3,4,5,6] },
+    { title:"Schalung mit Nut + Feder 27 x 135 mm", dicke_mm:27, nutzbreite_mm:135, breite_mm:135, laengen:[3,4,5,6] },
+    { title:"Schalung mit Nut + Feder 32 x 135 mm", dicke_mm:32, nutzbreite_mm:135, breite_mm:135, laengen:[3,4,5,6] },
+    { title:"2,4 x 10 cm (Bohlen)", dicke_mm:24, nutzbreite_mm:100, breite_mm:100, laengen:[3,4,5,6] }
+  ],
+  "Profilbretter / Riffelbohlen": [
+    { title:"27 x 135 mm fein geriffelt", dicke_mm:27, nutzbreite_mm:135, breite_mm:135, laengen:[3,4,5,6] },
+    { title:"27 x 135 mm grob geriffelt", dicke_mm:27, nutzbreite_mm:135, breite_mm:135, laengen:[3,4,5,6] }
+  ],
+  "Unbesäumte Bretter": [
+    { title:"2,4 cm Breite 15–22 cm", dicke_mm:24, defaultNutz:180, defaultBreite:180, nutzHint:"Annahme 180 mm — bitte anpassen und bestätigen.", laengen:[3,4,5,6] }
+  ]
+};
+
+const KERF_MM = 3;
+const MAX_WALL_L = 200;
+const MAX_WALL_H = 50;
+
+let category = null;
+let position = null;
+let lenM = null;
+let reservePct = 10;
+let direction = "H";
+let widthsConfirmed = false;
+let walls = [];
+
+const el = id => document.getElementById(id);
+const fmt2 = value => (Math.round(value * 100) / 100).toLocaleString("de-DE");
+const fmtLen = value => value.toLocaleString("de-DE", { maximumFractionDigits: 2 });
+const jointLabel = count => `${count} ${count === 1 ? "Stoß" : "Stöße"}`;
+
+function parseNumber(input){
+  const raw = String(input.value).trim().replace(",", ".");
+  if(raw === "") return null;
+  const value = Number(raw);
+  return Number.isFinite(value) ? value : NaN;
+}
+
+function setStatus(type, message){
+  const box = el("statusBox");
+  box.className = message ? `status show ${type}` : "status";
+  box.textContent = message || "";
+}
+
+function invalidateWidthConfirmation(){
+  widthsConfirmed = false;
+  el("chkConfirmWidth").checked = false;
+}
+
+function applyProductDefaults(){
+  const cover = position.nutzbreite_mm ?? position.defaultNutz ?? "";
+  const physical = position.breite_mm ?? position.defaultBreite ?? cover;
+  el("inpNutz").value = cover;
+  el("inpBreite").value = physical;
+  el("hintNutz").textContent = position.nutzHint || "Vorgabewert — bitte prüfen und bestätigen.";
+  invalidateWidthConfirmation();
+}
+
+function fillPositions(){
+  const products = SORTIMENT[category] || [];
+  el("ddPosition").innerHTML = products.map((p, i) => `<option value="${i}">${p.title}</option>`).join("");
+  position = products[0];
+  applyProductDefaults();
+}
+
+function renderLengthButtons(preserve){
+  const container = el("lenButtons");
+  container.innerHTML = "";
+  const lengths = position?.laengen || [];
+  if(!lengths.length){
+    lenM = null;
+    container.innerHTML = '<span class="muted">Keine Längen definiert.</span>';
+    return;
+  }
+  if(!(preserve && lengths.includes(lenM))) lenM = lengths[0];
+  lengths.forEach(length => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "btn" + (length === lenM ? " primary" : "");
+    button.textContent = `${length} m`;
+    button.setAttribute("aria-pressed", String(length === lenM));
+    button.onclick = () => {
+      lenM = length;
+      [...container.children].forEach(item => { item.classList.remove("primary"); item.setAttribute("aria-pressed", "false"); });
+      button.setAttribute("aria-pressed", "true");
+      button.classList.add("primary");
+      updateAll();
+    };
+    container.appendChild(button);
+  });
+}
+
+function wallArea(wall){
+  return wall.L * wall.H + (wall.G > 0 ? 0.5 * wall.L * wall.G : 0);
+}
+
+function renderWalls(){
+  const container = el("walls");
+  if(!walls.length){
+    container.innerHTML = '<div class="empty-walls"><span class="empty-dot" aria-hidden="true"></span>Noch keine Wand hinzugefügt.</div>';
+    return;
+  }
+  container.innerHTML = "";
+  walls.forEach((wall, index) => {
+    const row = document.createElement("div");
+    row.className = "wall-item";
+    const info = document.createElement("div");
+    info.className = "info";
+    info.textContent = `Wand ${index + 1} · ${fmt2(wall.L)} × ${fmt2(wall.H)} m` +
+      (wall.G > 0 ? ` + Giebel ${fmt2(wall.G)} m (${fmt2(wallArea(wall))} m²)` : "");
+    const remove = document.createElement("button");
+    remove.type = "button";
+    remove.className = "del";
+    remove.textContent = "Entfernen";
+    remove.setAttribute("aria-label", `Wand ${index + 1} entfernen`);
+    remove.onclick = () => {
+      walls.splice(index, 1);
+      renderWalls();
+      updateAll();
+    };
+    row.append(info, remove);
+    container.appendChild(row);
+  });
+}
+
+function splitForJoints(requiredMm, stockMm){
+  if(requiredMm <= stockMm) return { pieces:[requiredMm], joints:0 };
+  const count = Math.ceil(requiredMm / stockMm);
+  const base = Math.floor(requiredMm / count);
+  const remainder = requiredMm - base * count;
+  const pieces = Array.from({ length:count }, (_, i) => base + (i < remainder ? 1 : 0));
+  return { pieces, joints:count - 1 };
+}
+
+function horizontalLengths(wall, coverMm){
+  const lengths = [];
+  const wallMm = Math.round(wall.L * 1000);
+  const heightMm = Math.round(wall.H * 1000);
+  const rows = Math.ceil(heightMm / coverMm);
+  for(let i = 0; i < rows; i++) lengths.push(wallMm);
+
+  if(wall.G > 0){
+    const gableMm = Math.round(wall.G * 1000);
+    const gableRows = Math.ceil(gableMm / coverMm);
+    for(let i = 0; i < gableRows; i++){
+      const lowerEdge = i * coverMm;
+      const width = Math.ceil(wallMm * Math.max(0, 1 - lowerEdge / gableMm));
+      if(width > 0) lengths.push(width);
+    }
+  }
+  return { lengths, units:lengths.length };
+}
+
+function verticalLengths(wall, coverMm){
+  const lengths = [];
+  const wallMm = Math.round(wall.L * 1000);
+  const heightMm = Math.round(wall.H * 1000);
+  const gableMm = Math.round(wall.G * 1000);
+  const strips = Math.ceil(wallMm / coverMm);
+  const center = wallMm / 2;
+
+  for(let i = 0; i < strips; i++){
+    let gableHeight = 0;
+    if(gableMm > 0){
+      const x0 = i * coverMm;
+      const x1 = Math.min((i + 1) * coverMm, wallMm);
+      const closestToCenter = Math.min(Math.abs(x0 - center), Math.abs(x1 - center), x0 <= center && x1 >= center ? 0 : Infinity);
+      gableHeight = Math.ceil(gableMm * Math.max(0, 1 - (2 * closestToCenter / wallMm)));
+    }
+    lengths.push(heightMm + gableHeight);
+  }
+  return { lengths, units:strips };
+}
+
+function packWallSequentially(requiredLengths, stockMm){
+  const pieces = [];
+  let joints = 0;
+  requiredLengths.forEach(required => {
+    const split = splitForJoints(required, stockMm);
+    pieces.push(...split.pieces);
+    joints += split.joints;
+  });
+
+  let boards = 0;
+  let usedOnCurrent = 0;
+  pieces.forEach(piece => {
+    const withKerf = usedOnCurrent === 0 ? piece : KERF_MM + piece;
+    if(usedOnCurrent === 0 || usedOnCurrent + withKerf > stockMm){
+      boards++;
+      usedOnCurrent = piece;
+    }else{
+      usedOnCurrent += KERF_MM + piece;
+    }
+  });
+  return { boards, joints };
+}
+
+function hideResult(){
+  el("heroResult").hidden = true;
+  el("emptyResult").hidden = false;
+  refreshPreview();
+  el("outJointsNotice").hidden = true;
+  el("outJointsNotice").textContent = "";
+  ["outDirection","outUnits","outBaseBoards","outReserveBoards","outLfmBuy","outM3","outJoints"].forEach(id => {
+    el(id).textContent = "—";
+  });
+}
+
+function computePurchase(){
+  if(!walls.length){
+    setStatus("info", "Bitte mindestens eine Wand hinzufügen.");
+    hideResult();
+    return null;
+  }
+  if(!Number.isFinite(lenM) || lenM <= 0){
+    setStatus("err", "Bitte eine gültige Brettlänge wählen.");
+    hideResult();
+    return null;
+  }
+
+  const coverMm = parseNumber(el("inpNutz"));
+  const physicalMm = parseNumber(el("inpBreite"));
+  if(!Number.isFinite(coverMm) || coverMm < 10 || coverMm > 500){
+    setStatus("err", "Bitte eine Deck-/Nutzbreite zwischen 10 und 500 mm eingeben.");
+    hideResult();
+    return null;
+  }
+  if(!Number.isFinite(physicalMm) || physicalMm < 10 || physicalMm > 500){
+    setStatus("err", "Bitte eine physische Brettbreite zwischen 10 und 500 mm eingeben.");
+    hideResult();
+    return null;
+  }
+
+  const stockMm = Math.round(lenM * 1000);
+  let baseBoards = 0;
+  let units = 0;
+  let joints = 0;
+
+  walls.forEach(wall => {
+    const demand = direction === "H"
+      ? horizontalLengths(wall, coverMm)
+      : verticalLengths(wall, coverMm);
+    const plan = packWallSequentially(demand.lengths, stockMm);
+    baseBoards += plan.boards;
+    units += demand.units;
+    joints += plan.joints;
+  });
+
+  const boards = Math.ceil(baseBoards * (1 + reservePct / 100) - 1e-12);
+  const reserveBoards = boards - baseBoards;
+  const lfmBuy = boards * lenM;
+  const m3 = lfmBuy * (physicalMm / 1000) * (position.dicke_mm / 1000);
+
+  const warnings = [];
+  if(!widthsConfirmed) warnings.push("Die Deck-/Nutzbreite ist nicht bestätigt.");
+  if(joints > 0) warnings.push(`Es sind mindestens ${jointLabel(joints)} erforderlich; deren Position ist nicht geprüft.`);
+  setStatus(warnings.length ? "warn" : "", warnings.join(" "));
+
+  return { baseBoards, boards, reserveBoards, lfmBuy, m3, units, joints };
+}
+
+function updateAll(){
+  const result = computePurchase();
+  if(!result) return;
+
+  el("heroResult").hidden = false;
+  el("emptyResult").hidden = true;
+  el("resultValue").textContent = result.boards;
+  el("resultUnit").textContent = result.boards === 1 ? "Brett" : "Bretter";
+  el("resultStock").textContent = `à ${fmtLen(lenM)} m Länge`;
+  refreshPreview();
+  el("outHero").textContent = `Geschätzter Bedarf: ${result.boards} Bretter à ${fmtLen(lenM)} m`;
+  el("outReserve").textContent = `Inklusive ${reservePct} % Materialreserve`;
+  el("outJointsNotice").hidden = result.joints === 0;
+  el("outJointsNotice").textContent = result.joints > 0
+    ? `Achtung: mindestens ${jointLabel(result.joints)} erforderlich (nicht geplant).`
+    : "";
+  el("outDirection").textContent = direction === "H" ? "Horizontal" : "Vertikal";
+  el("outUnits").textContent = `${result.units} ${direction === "H" ? "Reihen" : "Streifen"}`;
+  el("outBaseBoards").textContent = `${result.baseBoards} Stück`;
+  el("outReserveBoards").textContent = `${result.reserveBoards} Stück (${reservePct} %)`;
+  el("outLfmBuy").textContent = `${fmt2(result.lfmBuy)} lfm`;
+  el("outM3").textContent = `${fmt2(result.m3)} m³`;
+  el("outJoints").textContent = result.joints > 0 ? `Ja, mindestens ${jointLabel(result.joints)}` : "Nein";
+}
+
+function tryAddWall(){
+  const message = el("wallFormMsg");
+  message.textContent = "";
+  const L = parseNumber(el("inpWL"));
+  const H = parseNumber(el("inpWH"));
+  const hasGable = el("chkG").checked;
+  const G = hasGable ? parseNumber(el("inpGH")) : 0;
+
+  if(!Number.isFinite(L) || !Number.isFinite(H)){
+    message.textContent = "Bitte gültige Zahlen für Länge und Höhe eingeben.";
+    return;
+  }
+  if(L < 0.01 || L > MAX_WALL_L || H < 0.01 || H > MAX_WALL_H){
+    message.textContent = `Maße: 0,01–${MAX_WALL_L} m Länge und 0,01–${MAX_WALL_H} m Höhe.`;
+    return;
+  }
+  if(hasGable && (!Number.isFinite(G) || G < 0.01 || G > MAX_WALL_H)){
+    message.textContent = "Bitte eine gültige Giebelhöhe zwischen 0,01 und 50 m eingeben.";
+    return;
+  }
+
+  walls.push({ L, H, G:hasGable ? G : 0 });
+  el("inpWL").value = "";
+  el("inpWH").value = "";
+  el("inpGH").value = "";
+  el("chkG").checked = false;
+  el("inpGH").disabled = true;
+  renderWalls();
+  updateAll();
+}
+
+function init(){
+  const categories = Object.keys(SORTIMENT);
+  el("ddCategory").innerHTML = categories.map(value => `<option value="${value}">${value}</option>`).join("");
+  category = categories[0];
+  fillPositions();
+  renderLengthButtons(false);
+
+  el("ddCategory").onchange = () => {
+    category = el("ddCategory").value;
+    fillPositions();
+    renderLengthButtons(true);
+    updateAll();
+  };
+  el("ddPosition").onchange = () => {
+    position = (SORTIMENT[category] || [])[+el("ddPosition").value];
+    applyProductDefaults();
+    renderLengthButtons(true);
+    updateAll();
+  };
+  document.querySelectorAll('input[name="direction"]').forEach(radio => {
+    radio.onchange = () => {
+      direction = radio.value;
+      updateAll();
+    };
+  });
+  el("sldReserve").oninput = () => {
+    reservePct = +el("sldReserve").value;
+    el("lblReserve").textContent = `${reservePct} %`;
+    updateAll();
+  };
+  el("chkG").onchange = () => {
+    el("inpGH").disabled = !el("chkG").checked;
+    if(!el("chkG").checked) el("inpGH").value = "";
+  };
+  el("btnAddWall").onclick = tryAddWall;
+  el("inpNutz").oninput = () => {
+    invalidateWidthConfirmation();
+    updateAll();
+  };
+  el("inpBreite").oninput = updateAll;
+  el("chkConfirmWidth").onchange = () => {
+    widthsConfirmed = el("chkConfirmWidth").checked;
+    updateAll();
+  };
+
+  renderWalls();
+  hideResult();
+  setStatus("info", "Produkt, Brettlänge, Verlegerichtung und mindestens eine Wand eingeben.");
+}
+
+
+function refreshPreview(){
+  const inputL = parseNumber(el("inpWL"));
+  const inputH = parseNumber(el("inpWH"));
+  const validDraft = Number.isFinite(inputL) && inputL >= .01 && inputL <= MAX_WALL_L && Number.isFinite(inputH) && inputH >= .01 && inputH <= MAX_WALL_H;
+  const inputG = el("chkG").checked ? parseNumber(el("inpGH")) : 0;
+  const wall = validDraft ? {L:inputL,H:inputH,G:Number.isFinite(inputG) && inputG > 0 && inputG <= MAX_WALL_H ? inputG : 0} : walls[0];
+  const gable = wall && wall.G > 0;
+  el("facadeShape").setAttribute("fill", direction === "H" ? "url(#boardPatternH)" : "url(#boardPatternV)");
+  el("facadeShape").setAttribute("d", gable ? "M60 95L190 31L320 95V194H60Z" : "M60 59H320V194H60Z");
+  el("facadeSide").setAttribute("d", gable ? "M320 95L329 89V188L320 194Z" : "M320 59L329 53V188L320 194Z");
+  el("facadeTop").setAttribute("d", gable ? "M60 95L190 31L199 25L329 89L320 95L190 31Z" : "M60 59L69 53H329L320 59Z");
+  el("previewWidth").textContent = wall ? `${fmt2(wall.L)} m` : "Länge";
+  el("previewHeight").textContent = wall ? (gable ? `${fmt2(wall.H)} + ${fmt2(wall.G)} m` : `${fmt2(wall.H)} m`) : "Höhe";
+  el("previewTag").textContent = direction === "H" ? "Horizontal" : "Vertikal";
+  el("previewCaption").textContent = validDraft ? "Eingabe · noch nicht hinzugefügt" : wall ? `Wand 1 von ${walls.length}` : "Schematische Darstellung";
+  el("previewTitle").textContent = `${direction === "H" ? "Horizontale" : "Vertikale"} Verlegung${wall ? `, Wand ${fmt2(wall.L)} mal ${fmt2(wall.H)} Meter${gable ? `, Giebel ${fmt2(wall.G)} Meter` : ""}` : ", schematisch"}`;
+}
+document.addEventListener("DOMContentLoaded", () => {
+  init();
+  ["inpWL","inpWH","inpGH","chkG"].forEach(id => el(id).addEventListener("input", refreshPreview));
+  el("chkG").addEventListener("change", refreshPreview);
+  ["inpWL","inpWH","inpGH"].forEach(id => el(id).addEventListener("keydown", e => { if(e.key === "Enter"){ e.preventDefault(); tryAddWall(); } }));
+});
+
+</script>
+</body>
+</html>
